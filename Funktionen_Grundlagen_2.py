@@ -95,7 +95,7 @@ print(ergebnis)
 ## in liste2, ansonsten False.
 ## Rufe die Funktion anschließend mit den Argumenten [4, 5, 6] und [7, -3, 0] auf, speichere das Ergebnis in einer Variable namens ergebnis und gib es aus.
 def listen_vergleich(liste1, liste2):
-    if liste1> liste2:
+    if liste1[]> liste2:
         return True
     else:
         return False
