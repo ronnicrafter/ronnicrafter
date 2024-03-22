@@ -95,13 +95,24 @@ print(ergebnis)
 ## in liste2, ansonsten False.
 ## Rufe die Funktion anschließend mit den Argumenten [4, 5, 6] und [7, -3, 0] auf, speichere das Ergebnis in einer Variable namens ergebnis und gib es aus.
 def listen_vergleich(liste1, liste2):
-    if liste1> liste2
+    if liste1> liste2:
         return True
+    else:
+        return False
+ergebnis = listen_vergleich([4, 5, 6],[7, -3, 0])
+print(ergebnis)    
+
 
 ## Aufgabe 11: Schreibe eine Funktion namens listen_vergleich_index, die drei Parameter liste1, liste2 und index besitzt und True zurückgibt, falls das Element in liste1 an der Stelle index größer ist
 ## als das Element an der Stelle index in liste2, ansonsten False.
 ## Rufe die Funktion anschließend mit den Argumenten [4, 5, 6], [7, -3, 0] und 1 auf, speichere das Ergebnis in einer Variable namens ergebnis und gib es aus.
-
+def listen_vergleich_index(liste1, liste2, index):
+    if liste1[index]> index[liste2]:
+        return True
+    else:
+        return False
+ergebnis = listen_vergleich_index([4, 5, 6],[7, -3, 0], 1)
+print(ergebnis)
 
 ## Aufgabe 12: Schreibe eine Funktion namens listen_elemente_summe, die einen einzigen Parameter liste besitzt und die Summe der ersten drei Elemente dieser Liste zurückgibt.
 ## Rufe die Funktion anschließend mit dem Argument [10, 11, 12, 13, 14, 15] auf, speichere das Ergebnis in einer Variable namens ergebnis und gib es aus.
