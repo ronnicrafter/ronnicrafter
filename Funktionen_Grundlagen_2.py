@@ -84,7 +84,7 @@ print(ergebnis)
 ## der Liste größer als das der Stelle index2 der Liste ist, ansonsten False.
 ## Rufe die Funktion anschließend mit den Argumenten [3, 1, 5], 1 und 0 auf, speichere das Ergebnis in einer Variable namens ergebnis und gib es aus.
 def listenelement_vergleich(liste, index1, index2):
-    if liste[index1]>liste[index2]:
+    if liste[index1]>index2[liste]:
         return True
     else:
         return False
@@ -95,7 +95,7 @@ print(ergebnis)
 ## in liste2, ansonsten False.
 ## Rufe die Funktion anschließend mit den Argumenten [4, 5, 6] und [7, -3, 0] auf, speichere das Ergebnis in einer Variable namens ergebnis und gib es aus.
 def listen_vergleich(liste1, liste2):
-    if liste1[]> liste2:
+    if liste1> liste2:
         return True
     else:
         return False
