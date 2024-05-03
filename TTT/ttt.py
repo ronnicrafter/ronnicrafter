@@ -7,7 +7,8 @@ class TTT(arcade.Window):
         self.arena = { (0, 0): "X", (1, 0): "", (2, 0): "", (0, 1): "", (1, 1): "", (2, 1): "O", (0, 2): "", (1, 2): "", (2, 2): ""}
 
     def on_mouse_press(self, x, y, button, modifiers):
-        ...
+        for self.koordinate in self.arena:
+  
 
     def on_update(self, delta_time):
         ...
@@ -22,7 +23,7 @@ class TTT(arcade.Window):
 
         for koordinaten in self.arena:
             x_arena = koordinaten[0]
-            x_fenster = x_arena * 200 + 100 + 6
+            x_fenster = x_arena * 200 + 100 
             y_arena = koordinaten[1]
             y_fenster = y_arena * 200 + 100
             feld_inhalt = self.arena[koordinaten]
