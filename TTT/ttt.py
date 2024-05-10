@@ -4,6 +4,8 @@ class TTT(arcade.Window):
     def __init__ (self): # diese funktion heißt konstruktur und wird automatisch dann aufgerufen, wenn ein objekt der klasse TTT erstellt wird 
         super().__init__(600, 600, "Tic Tac Toe") # das fenster soll 600x600 pixel groß sein und den titel "tic tac toe" besitzen 
 
+        
+
         self.arena = { (0, 0): "", (1, 0): "", (2, 0): "", (0, 1): "", (1, 1): "", (2, 1): "", (0, 2): "", (1, 2): "", (2, 2): ""}
 
         self.spieler = "X"
