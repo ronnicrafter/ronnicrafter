@@ -4,12 +4,22 @@ class TTT(arcade.Window):
     def __init__ (self): # diese funktion heißt konstruktur und wird automatisch dann aufgerufen, wenn ein objekt der klasse TTT erstellt wird 
         super().__init__(600, 600, "Tic Tac Toe") # das fenster soll 600x600 pixel groß sein und den titel "tic tac toe" besitzen 
 
-        
+        arcade.set_background_color(arcade.color.DARK_TURQUOISE )        
 
         self.arena = { (0, 0): "", (1, 0): "", (2, 0): "", (0, 1): "", (1, 1): "", (2, 1): "", (0, 2): "", (1, 2): "", (2, 2): ""}
 
         self.spieler = "X"
 
+    def _gewinnprüfung(self):
+        if self.arena[(0, 0)] == self.arena[(1, 0)] == self.arena[(2, 0)] != "":
+            return True
+        if self.arena[(0, 1)] == self.arena[(1, 1)] == self.arena[(2, 1)] != "":
+            return True
+        if self.arena[(0, 2)] == self.arena[(1, 2)] == self.arena[(2, 2)] != "":
+            return True
+        if self.arena[(0, 0)] == self.arena[(0, 1)] == self.arena[(0, 2)] != "":
+            return True
+        return False
     # Wird automatisch immer dann ausgeführt, wenn der Spieler mit der Maus klickt 
     # In x, y steht Position des Mausklicks
 
@@ -20,9 +30,12 @@ class TTT(arcade.Window):
         # 0 <= x < 200 -> 0
         # 200 <= x < 400 -> 1
         # 400 <= x < 600 -> 2
-        self.arena[(x_arena ,y_arena )] = self.spieler
+        if self.arena[(x_arena ,y_arena)] =="":
+            self.arena[(x_arena ,y_arena)] = self.spieler 
 
-        self.spieler = "O" if self.spieler == "X" else "x"
+            self.spieler = "O" if self.spieler == "X" else "X"
+
+
     def on_update(self, delta_time):
         ...
 
@@ -30,10 +43,10 @@ class TTT(arcade.Window):
         self.clear()
 
         #Eine Weiße Linie der Dicke 12 von (x=20, y=200, x=580, y=200)
-        arcade.draw_line(20, 200, 580, 200, arcade.color.WHITE, 12)
-        arcade.draw_line(20, 400, 580, 400, arcade.color.WHITE, 12)
-        arcade.draw_line(200, 580, 200, 20, arcade.color.WHITE, 12)
-        arcade.draw_line(400, 580, 400, 20, arcade.color.WHITE, 12)
+        arcade.draw_line(20, 200, 580, 200, arcade.color.RED, 12)
+        arcade.draw_line(20, 400, 580, 400, arcade.color.RED, 12)
+        arcade.draw_line(200, 580, 200, 20, arcade.color.RED, 12)
+        arcade.draw_line(400, 580, 400, 20, arcade.color.RED, 12)
 
         for koordinaten in self.arena:
             x_arena = koordinaten[0]
@@ -43,6 +56,8 @@ class TTT(arcade.Window):
             feld_inhalt = self.arena[koordinaten]
             arcade.draw_text(feld_inhalt, x_fenster, y_fenster, font_size=70, font_name="Garamond", anchor_x="center", anchor_y="center")
 
-
+        if self._gewinnprüfung():
+            if self.spieler == "O":
+                arcade.draw_text("Du hast gewonnen, Spieler X!", self.width / 2,self.height / 2 color=arcade.color.DARK_GREEN, front_size = 90, font_name=self."Garamond", witdh=self.width, aligh)
 TTT() 
 arcade.run()
