@@ -35,7 +35,7 @@ class TTT(arcade.Window):
 
    #gibt eine Liste mit positionen aller freien Felder zurück 
     def _freie_felder(self):
-        ...
+        
     
     def on_key_press(self, symbol, modifiers):
         if symbol == arcade.key.Q:
